@@ -161,6 +161,7 @@ class JoinGenerator
 
     public function shouldJoinWithSelect()
     {
+        return false;
         return $this->joinWithSubSelect;
     }
 
@@ -186,7 +187,7 @@ class JoinGenerator
                                                             $table, $logTable->getColumnToJoinOnIdVisit());
 
                 if ($availableLogTable->shouldJoinWithSubSelect()) {
-                    $this->joinWithSubSelect = true;
+                    $this->joinWithSubSelect = false;
                 }
 
                 break;
